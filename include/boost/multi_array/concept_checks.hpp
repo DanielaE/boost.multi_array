@@ -21,6 +21,11 @@
 #include "boost/concept_check.hpp"
 #include "boost/iterator/iterator_concepts.hpp"
 
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4510 4610)
+#endif
+
 namespace boost {
 namespace multi_array_concepts {
 
@@ -221,5 +226,8 @@ namespace detail {
 
 } // namespace boost
 
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif // BOOST_MULTI_ARRAY_CONCEPT_CHECKS_RG110101_HPP
