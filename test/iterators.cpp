@@ -75,6 +75,9 @@ struct ittraits_generator :
                    ittraits_mutable<Array> >
 {};
 
+#ifdef BOOST_MSVC
+#pragma warning(disable: 4700)	
+#endif
 
 template <typename Array>
 void construct_iterators(Array&) {
@@ -143,7 +146,7 @@ void test_iterators(Array& A, const IterTraits&) {
     typedef typename IterTraits::riterator2 riterator2;
     typedef typename IterTraits::riterator1 riterator1;
 
-    int check_iter_val = A.num_elements()-1;
+    int check_iter_val = static_cast<int>(A.num_elements()-1);
     for (riterator3 i = A.rbegin(); i != (riterator3)A.rend(); ++i)
       for(riterator2 ii = (*i).rbegin(); ii != (riterator2)(*i).rend(); ++ii)
         for(riterator1 iii = (*ii).rbegin(); iii != (riterator1)(*ii).rend();
