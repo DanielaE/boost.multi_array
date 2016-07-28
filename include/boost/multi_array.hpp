@@ -428,9 +428,9 @@ public:
     // Build index_gen objects to create views with the same shape
 
     // these need to be separate to handle non-zero index bases
-    typedef detail::multi_array::index_gen<NumDims,NumDims> index_gen;
-    index_gen old_idxes;
-    index_gen new_idxes;
+    typedef detail::multi_array::index_gen<NumDims,NumDims> index_gen_t;
+    index_gen_t old_idxes;
+    index_gen_t new_idxes;
 
     std::transform(new_array.index_base_list_.begin(),
                    new_array.index_base_list_.end(),
