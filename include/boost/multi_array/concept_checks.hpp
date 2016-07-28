@@ -157,27 +157,27 @@ namespace detail {
       const_constraints(a);
     }
 
-    void const_constraints(const Array& a) {
+    void const_constraints(const Array& ar) {
 
       //      value_type vt = a[ id ];
 
       // Test slicing, keeping only the first dimension, losing the rest
-      detail::idgen_helper<NumDims-1>::call(a,idgen[range],id);
+      detail::idgen_helper<NumDims-1>::call(ar,idgen[range],id);
 
       // Test slicing, keeping all dimensions.
-      detail::idgen_helper<NumDims-1>::call(a,idgen[range],range);
+      detail::idgen_helper<NumDims-1>::call(ar,idgen[range],range);
 
-      st = a.size();
-      st = a.num_dimensions();
-      st = a.num_elements();
-      stp = a.shape();
-      idp = a.strides();
-      idp = a.index_bases();
-      cit = a.begin();
-      cit = a.end();
-      crit = a.rbegin();
-      crit = a.rend();
-      eltp = a.origin();
+      st = ar.size();
+      st = ar.num_dimensions();
+      st = ar.num_elements();
+      stp = ar.shape();
+      idp = ar.strides();
+      idp = ar.index_bases();
+      cit = ar.begin();
+      cit = ar.end();
+      crit = ar.rbegin();
+      crit = ar.rend();
+      eltp = ar.origin();
     }
 
     typedef typename Array::value_type value_type;
