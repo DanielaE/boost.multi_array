@@ -461,6 +461,7 @@ protected:
       // the "far side" of the range (the top if stride is positive, the bottom
       // if stride is negative).
       index bound_adjustment = stride < 0 ? 1 : 0;
+	  (void)bound_adjustment;
       BOOST_ASSERT(((index_bases[n] - bound_adjustment) <= finish) &&
         (finish <= (index_bases[n] + index(extents[n]) - bound_adjustment)));
       ignore_unused_variable_warning(bound_adjustment);
